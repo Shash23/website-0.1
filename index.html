@@ -27,10 +27,12 @@
         
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+
 </head>
 <body>
     
-    <br>
     <br>
     <br>
     <br>
@@ -46,13 +48,15 @@
             <a href="#" onclick="showSection('resume')" style="margin-right: 10px;">{resume}</a>
         </div>
 
+        <div id="p5-container"></div>
 
         <section id="about" style="display: none;">
 
             <h3>I. About</h3>
-            <p>Hey, I'm an undergraduate student at the University of Wisconsin-Madison studying Computer Science and Data Science. I'm interesed in Quantitative Finance, Data Science and Databases Systems. </p>
+            <p>Hey, I'm an undergraduate student at the University of Wisconsin-Madison studying Computer Science and Data Science. I'm interesed in Quantitative Trading, Data Science and Databases Systems. </p>
             <p>In my free time, I love playing soccer, running and hanging out with my friends.</p>
 
+            
             
         </section>
 
@@ -93,10 +97,10 @@
             <ul>
                 <li>Algorithms (CS577)</li>
                 <li>Capstone (CS620)</li>
-                <li>Artifical Intelligence (CS540)</li>
-                <li>Big Data Systems (CS544)</li>
-                <li>Database Management (CS570)</li>
                 <li>Human Computer Interaction (CS570)</li>
+                <li>Database Management (CS564)</li>
+                <li>Big Data Systems (CS544)</li>
+                <li>Artifical Intelligence (CS540)</li>
             </ul>
 
         </section>
@@ -107,14 +111,55 @@
     <br>
     <br>
     <br>
-    <br>
 
     <div class="socials" style="text-align: center;">
 
         <a href="https://github.com/Shash23" target="_blank" style="margin-right: 100px;">{github}: Shash23</a>        
         <a href="https://www.linkedin.com/in/shashwat-ghevde-22843b202/" target="_blank" style="margin-right: 100px;">{linkedin}: Shashwat Ghevde</a>
-        <a>2024@SGK</a>
+        <a>2025@SGK</a>
     </div>
+
+    <script>
+        let particles = [];
+
+        function setup() {
+            let canvas = createCanvas(400, 400, WEBGL);
+            canvas.parent("p5-container");
+
+            let numParticles = 1000;
+            let radius = 100;
+
+            for (let i = 0; i < numParticles; i++) {
+                let theta = random(TWO_PI);
+                let phi = acos(random(-1, 1));
+
+                let x = radius * sin(phi) * cos(theta);
+                let y = radius * sin(phi) * sin(theta);
+                let z = radius * cos(phi);
+
+                particles.push({ x, y, z });
+            }
+        }
+
+        function draw() {
+            clear();
+            rotateY(frameCount * 0.01);
+            rotateX(frameCount * 0.005);
+
+            stroke(0);
+            strokeWeight(2);
+
+            for (let p of particles) {
+                let newX = p.x * cos(frameCount * 0.002) - p.z * sin(frameCount * 0.002);
+                let newZ = p.x * sin(frameCount * 0.002) + p.z * cos(frameCount * 0.002);
+                point(newX, p.y, newZ);
+            }
+        }
+    </script>
+        
+        
+        
+        
     
 
 </body>
