@@ -1,0 +1,65 @@
+/* Base styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    background: white;
+    color: #222;
+  }
+  
+  /* Centered main content — moved upward */
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 40px;      /* reduced top padding (was 80px) */
+    padding-top: 60px;       /* moves everything upward */
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .intro {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+  }
+  
+  h3 {
+    margin-top: 40px;
+    font-size: 21px;
+  }
+  
+  ul {
+    margin-top: 10px;
+    line-height: 1.8;
+  }
+  
+  .fade {
+    color: #777;
+  }
+  
+  /* Footer aligned left + right */
+  .footer {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #777;
+  }
+  
+  .built {
+    margin-top: 60px;
+    font-size: 16px;
+    color: #777;
+  }
+  
+  .built a {
+    text-decoration: none;
+  }
+  
+  .pollen {
+    color: #d33;
+  }
+  

@@ -39,7 +39,7 @@
     <br>
     <div class="container">
     
-        <h1 class="latex-dark-auto">Shashwat Ghevde</h1>
+        <h1 class="latex-dark-auto">shashwat ghevde</h1>
         <p class="latex-light-auto" style="text-align: center;">ghevde@wisc.edu</p>
         
         <div class="nav" style="text-align: center;">
@@ -48,14 +48,12 @@
             <a href="#" onclick="showSection('resume')" style="margin-right: 10px;">{resume}</a>
         </div>
 
-        <div id="p5-container"></div>
+        <!---<div id="p5-container"></div> -->
 
         <section id="about" style="display: none;">
 
-            <h3>I. About</h3>
-            <p>Hey, I'm an incoming MS Data Science student at the University of Wisconsin-Madison! I'm interesed in Quantitative Trading and Data Science. </p>
-            <br>
-            <p>In my free time, I love playing soccer, running, and hanging out with my friends!</p>
+            <h4>i. about</h4>
+            <p>hey, i'm an bs/ms student at the university of wisconsin-madison! in my free time, i love playing soccer, running, and hiking. </p>
 
             
             
@@ -63,39 +61,34 @@
 
         <section id="work" style="display: none;">
 
-            <h3>II. Work</h3>
+            <h4>ii. work</h4>
 
-            <p>This section is currently in progress, so for the meantime, feel free to check out my <a href="https://github.com/Shash23" target="_blank">Github</a>!</p>
+            <p>this section is currently in progress, so for the meantime, feel free to check out my <a href="https://github.com/Shash23" target="_blank">Github</a>!</p>
 
 
         </section>
 
         <section id="resume" style="display: none;">
 
-            <h3>III. Resume</h3>
+            <h4>iii. resume</h4>
 
-            <p><b>Education</b></p>
+            <p><b>education</b></p>
 
-            <p>University of Wisconsin - Madison (2025 - 2026)</p>
-            <p>M.S. Data Science </p>
+            <p>University of Wisconsin - Madison (2022 - 2026)</p>
+            <p>BS/MS in Computer Science & Data Science</p>
 
-            </br>
+            <p><b>work experience</b></p>
 
-            <p>University of Wisconsin - Madison (2022 - 2025)</p>
-            <p>B.S. Computer Sciences and B.S. Data Science </p>
-            
-            <br>
+            <p></p>
 
-            <p><b>Work Experience</b></p>
+            <p>software engineering intern @ <a href="https://www.fidelity.com/" target="_blank">Fidelity Investments</a> (summer 2024, 2025)</p>
+              
+            <p>swe @ <a href="https://business.wisc.edu/centers/hawk-center/" target="_blank">Hawk Center for Investment Analysis, Wisconsin School of Business</a> (fall/spring 2024/2025)</p>
 
-            <p>Software Engineer @ Hawk Center for Investment Analysis, Wisconsin School of Business</p>
-
-            <p>VP of Software Development @ Cardinal Trading Group</p>
+            <p>president @ <a href="https://cardinaltradinguw.com/" target="_blank">Cardinal Trading Group</a> (2025)</p>
             
             <p></p>
-            <p>Software Engineering Intern @ Fidelity Investments</p>
-            <p></p>
-            <p>Undergraduate Teaching Assistant, Undergraduate Research Assistant @ University of Wisconsin-Madison</p>
+            <p>undergraduate teaching assistant, undergraduate research assistant @ university of wisconsin-madison (23)</p>
             <p></p>
 
             <br>
@@ -106,8 +99,7 @@
 
     <br>
     <br>
-    <br>
-    <br>
+    
 
     <div class="socials" style="text-align: center;">
 
@@ -116,43 +108,6 @@
         <a>2025@SGK</a>
     </div>
 
-    <script>
-        let particles = [];
-
-        function setup() {
-            let canvas = createCanvas(400, 400, WEBGL);
-            canvas.parent("p5-container");
-
-            let numParticles = 1000;
-            let radius = 100;
-
-            for (let i = 0; i < numParticles; i++) {
-                let theta = random(TWO_PI);
-                let phi = acos(random(-1, 1));
-
-                let x = radius * sin(phi) * cos(theta);
-                let y = radius * sin(phi) * sin(theta);
-                let z = radius * cos(phi);
-
-                particles.push({ x, y, z });
-            }
-        }
-
-        function draw() {
-            clear();
-            rotateY(frameCount * 0.01);
-            rotateX(frameCount * 0.005);
-
-            stroke(0);
-            strokeWeight(2);
-
-            for (let p of particles) {
-                let newX = p.x * cos(frameCount * 0.002) - p.z * sin(frameCount * 0.002);
-                let newZ = p.x * sin(frameCount * 0.002) + p.z * cos(frameCount * 0.002);
-                point(newX, p.y, newZ);
-            }
-        }
-    </script>
 
 </body>
 </html>
